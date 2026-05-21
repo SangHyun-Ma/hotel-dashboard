@@ -1,2 +1,3 @@
 @echo off
-call "D:\[TASK]\travel-mcp-server\hotel-dashboard\backend\gradlew.bat" bootRun --no-daemon
+cd /d "%~dp0backend"
+call "%~dp0backend\gradlew.bat" bootRun
