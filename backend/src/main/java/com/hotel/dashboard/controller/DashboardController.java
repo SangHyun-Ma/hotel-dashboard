@@ -7,9 +7,7 @@ import com.hotel.dashboard.dto.TodayStatusDto;
 import com.hotel.dashboard.service.DashboardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +36,19 @@ public class DashboardController {
     @GetMapping("/reservations")
     public ResponseEntity<List<ReservationDto>> getReservations() {
         return ResponseEntity.ok(dashboardService.getReservations());
+    }
+
+    @GetMapping("/reservations/{id}")
+    public ResponseEntity<ReservationDto> getReservation(@PathVariable String id) {
+        return dashboardService.getReservationById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    // 투숙객 전체 예약 이력 (날짜 내림차순)
+    @GetMapping("/reservations/guest/{guestName}")
+    public ResponseEntity<List<ReservationDto>> getGuestReservations(
+            @PathVariable String guestName) {
+        return ResponseEntity.ok(dashboardService.getGuestReservations(guestName));
     }
 }

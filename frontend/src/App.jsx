@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import StatCard from './components/StatCard';
 import RevenueLineChart from './components/LineChart';
 import ChannelPieChart from './components/PieChart';
 import ReservationTable from './components/ReservationTable';
+import ReservationDetail from './pages/ReservationDetail';
 import {
   fetchTodayStatus,
   fetchChannelShare,
@@ -13,7 +15,7 @@ import {
 
 const REFRESH_INTERVAL = 5000;
 
-function App() {
+function DashboardPage() {
   const [todayStatus, setTodayStatus] = useState(null);
   const [channelShare, setChannelShare] = useState([]);
   const [monthlyRevenue, setMonthlyRevenue] = useState([]);
@@ -171,6 +173,15 @@ function App() {
         </section>
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<DashboardPage />} />
+      <Route path="/reservation/:id" element={<ReservationDetail />} />
+    </Routes>
   );
 }
 

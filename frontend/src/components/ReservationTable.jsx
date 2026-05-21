@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ReservationTable.css';
 
 const STATUS_MAP = {
@@ -43,7 +44,9 @@ const ReservationTable = ({ reservations }) => {
             return (
               <tr key={r.reservationId} className={idx % 2 === 0 ? 'row-even' : 'row-odd'}>
                 <td>
-                  <span className="res-id">{r.reservationId}</span>
+                  <Link to={`/reservation/${r.reservationId}`} className="res-id-link">
+                    {r.reservationId}
+                  </Link>
                 </td>
                 <td>
                   <span className="guest-name">{r.guestName}</span>

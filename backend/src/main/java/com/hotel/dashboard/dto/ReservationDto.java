@@ -16,4 +16,15 @@ public class ReservationDto {
     private String channel;
     private long amount;
     private String status;
+    private String guestPhone;
+    private String guestEmail;
+    private String roomType;
+    private String roomNumber;
+    private String hotelAddress;
+    private long pricePerNight;
+    private String paymentMethod;
+    private String paymentStatus;
+    private String specialRequest;
+    private String createdAt;
+    private String updatedAt;
 }
