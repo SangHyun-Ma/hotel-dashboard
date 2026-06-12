@@ -8,7 +8,7 @@
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-8b5cf6?logo=anthropic&logoColor=white)](https://claude.ai/code)
 
 서울 5성급 호텔 5곳의 실시간 예약 현황을 한눈에 볼 수 있는 대시보드입니다.  
-KPI 카드, 매출 트렌드 차트, 채널별 비율, 예약 목록을 5초마다 자동 갱신합니다.
+KPI 카드, 매출 트렌드 차트, 채널별 비율, 예약 목록을 5초마다 자동 갱신합니다. !!!
 
 ---
 
